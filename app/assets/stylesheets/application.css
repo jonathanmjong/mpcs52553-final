@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+/* Edamaters  */
+.edamaters-index-description {
+    text-overflow: ellipsis; 
+    overflow: hidden;
+}
+
+.edamaters-index-profile-container {
+    display:flex; 
+    flex-wrap: wrap;
+}
+
+.edamaters-index-profile-div {
+}

@@ -1,0 +1,28 @@
+<div class="container">
+	<header class="jumbotron">
+		<div class="container">
+			<h1>Welcome to EdaMate!</h1>
+			<p>View our hand picked EdaMaters from all over the world
+			</p>
+			<p>
+				<a class="btn btn-primary btn-lg" href="/edamaters/new">Create an EdaMate Profile</a>
+			</p>
+		</div>
+	</header>
+
+	<div class="row text-center edamaters-index-profile-container">
+		  <% @edamaters.each do |edamater|  %>
+			<div class="col-md-6 col-sm-12 edamaters-index-profile-div">
+				<div class="thumbnail">
+					  <img src="<%=edamater.image%>"> 
+					<div class="caption">
+						 <p class="edamaters-index-description"><%= edamater.description %> </p> 
+					</div>
+					<p>
+						 <a href="/edamaters/<%=edamater.id%>" class="btn btn-primary"><%= edamater.name%></a>
+					</p>
+				</div>
+			</div>
+		  <% end  %>
+	</div>
+</div> <!-- end body container -->

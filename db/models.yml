@@ -42,3 +42,24 @@
 # Complete details are online: https://github.com/jeffcohen/ez
 #
 # Have fun!
+
+Edamater:
+  name: string
+  price: integer
+  image: string
+  description: text
+  user_id: integer
+  updated_at: datetime
+
+User:
+  username: string
+  email: string
+  password_digest: string
+  updated_at: datetime
+
+Review: 
+  text: string
+  rating: integer
+  edamater_id: integer
+  updated_at: datetime
+

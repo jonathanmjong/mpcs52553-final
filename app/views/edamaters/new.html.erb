@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="row">
+		<h1>Create a new EdaMate profile</h1>
+		<div style="width: 30%; margin: 25px auto;">
+		<%= form_tag("/edamaters", method: 'post') do  %>
+
+			<div class="form-group">
+			<%= label_tag :name, "EdaMater Profile Name" %>
+			<%= text_field_tag :name, @edamater.name, autofocus: true, class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+			<%= label_tag :image, "Link to EdaMate Profile Image" %>
+			<%= text_field_tag :image, @edamater.image, class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+			<%= label_tag :price, "Set Your Price" %>
+			<%= text_field_tag :price, @edamater.price.to_i, class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+			<%= label_tag :description, "Describe the item you're trying to sell" %>
+			<%= text_area_tag :description, @edamater.description, rows: 5, class: 'form-control' %>
+			</div>
+
+			<%= submit_tag "Create EdaMate Profile", class: 'btn btn-success btn-lg'%>
+			or
+			<%= link_to "Cancel", "/edamaters" %>
+
+		<% end %>
+		</div>
+	</div>
+</div>

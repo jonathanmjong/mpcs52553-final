@@ -12,4 +12,29 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
+  create_table "edamaters", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.string "image"
+    t.datetime "updated_at"
+    t.text "description"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_edamaters_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "text"
+    t.integer "rating"
+    t.datetime "updated_at"
+    t.integer "edamater_id"
+    t.index ["edamater_id"], name: "index_reviews_on_edamater_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.datetime "updated_at"
+    t.string "email"
+    t.string "password_digest"
+  end
+
 end

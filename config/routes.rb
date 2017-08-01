@@ -7,7 +7,14 @@ Rails.application.routes.draw do
   get '/edamaters/new' => 'edamaters#new'
   get '/edamaters/:id' => 'edamaters#show'
   post '/edamaters' => 'edamaters#create'
-
+  get '/edamaters/:id/edit' => 'edamaters#edit'
+  patch '/edamaters/:id' => 'edamaters#update'
+  delete '/edamaters/:id' => 'edamaters#destroy'
+  # <a class="btn btn-warning" href="/edamaters/<%= @edamater.id %>/edit">Edit EdaMater Profile</a>
+  # <form class="delete-form" action="/edamaters/<%= @edamater.id %>/delete" method="post">
+  #   <button class="btn btn-danger">Delete EdaMater Profile</button>
+  # </form>
+  
   # Session
   get '/session/new' => 'sessions#new'
   post '/session' => 'sessions#create'

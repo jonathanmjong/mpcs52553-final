@@ -14,7 +14,23 @@
  *= require_self
  */
 
+
+.container{
+    font-family: Lato;
+    font-style: Light;
+}
+
+/* Header and Footer  */
+
+
+
 /* Edamaters  */
+#edamater-index-jumbotron {
+    background-color: #F0FFF0;
+    height: 20em;
+    font-family: Lato;
+}
+
 .edamaters-index-description {
     text-overflow: ellipsis; 
     overflow: hidden;
@@ -25,5 +41,7 @@
     flex-wrap: wrap;
 }
 
-.edamaters-index-profile-div {
+.edamater-form {
+    width: 30%; 
+    margin: 25px auto;
 }

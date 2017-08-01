@@ -15,17 +15,12 @@
 					<h4 class="pull-right">$<%= @edamater.price %>/session</h4>
 					<h4><a><%= @edamater.name %></a></h4>
 					<p><%= @edamater.description %></p>
-					<p>
-						<%# <em>Submitted by <%= @edamater.user.username %></em> %>
-					</p>
 					<!-- only show Edit and Delete buttons if user is logged in  -->
-					<!-- currentUser is from app.js as global var  -->
-					<%# <% if (currentUser && educatorFromController.educatorAuthor.id.equals(currentUser._id)) { %> %>
-						<a class="btn btn-warning" href="/edamaters/<%= @edamater.id %>/edit">Edit EdaMater Profile</a>
-						<form class="delete-form" action="/edamaters/<%= @edamater.id %>/delete" method="post">
-							<button class="btn btn-danger">Delete EdaMater Profile</button>
-						</form>
-					<%# <% } %> %>
+					<!-- @current_user is from session as global var  -->
+					<% if Edamater.where(:user_id => @current_user.id).present? %>
+						<%= button_to "Edit EdaMate Profile", "/edamaters/#{@edamater.id}/edit"%>
+						<%= button_to "Delete EdaMate Profile", "/edamaters/#{@edamater.id}", method: 'delete', data: { confirm: "Are you sure you want to delete your profile?" } %>
+					<% end %>
 				</div>
 			</div>
 

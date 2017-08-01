@@ -1,1 +1,21 @@
-<h1>Edit Review</h1>
+<div class="container">
+	<div class="row">
+		<h1>Edit Review for <%= @edamater.name %></h1>
+		<%= form_tag("/edamaters/#{@edamater.id}/reviews/#{@review.id}", method: 'patch', class: 'edamater-form') do  %>
+            <p>
+                <%= label_tag :rating, "How many stars out of 5?"%>
+                <%= select_tag :rating, options_for_select([1,2,3,4,5]), prompt: "Stars", class: '' %>
+            </p>
+            <p>
+                <%= label_tag :text, "Review "  %>
+                <%= text_area_tag :text, @review.text,
+                                    rows: 7, class: 'form-control' %>
+            </p>
+
+			<%= submit_tag "Update Review", class: 'btn btn-success btn-lg'%>
+			or
+			<%= link_to "Cancel", "/edamaters/#{@edamater.id}" %>
+
+		<% end %>
+	</div>
+</div>

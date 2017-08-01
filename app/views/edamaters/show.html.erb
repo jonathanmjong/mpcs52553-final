@@ -34,13 +34,13 @@
 				<% @edamater.reviews.each do |review| %>
 					<div class="row">
 						<div class="col-md-12">
-							<strong><%= review.user.username %></strong>
+							<strong>Written by <%= review.user.username %></strong>
 							<span class="pull-right"><%= review.updated_at %></span>
 							<p>
 								<%= review.text %>
 							</p>
 							<% if Review.where(:user_id => @current_user.id).present? %>
-								<%= button_to "Edit Review", "/edamaters/#{@edamater.id}/reviews/#{review.id}/edit"%>
+								<%= button_to "Edit Review", "/edamaters/#{@edamater.id}/reviews/#{review.id}/edit", method: 'get' %>
 								<%= button_to "Delete Review", "/edamaters/#{@edamater.id}/reviews/#{review.id}", method: 'delete', data: { confirm: "Are you sure you want to delete your review?" } %>
 							<% end %>
 						</div>

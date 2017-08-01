@@ -17,8 +17,10 @@ Rails.application.routes.draw do
 
   # Reviews
   get '/edamaters/:id/reviews/new' => 'reviews#new'
-  patch '/edamaters/:id/reviews/:review_id/edit' => 'reviews#update'
+  get '/edamaters/:id/reviews/:review_id/edit' => 'reviews#edit'
+  patch '/edamaters/:id/reviews/:review_id' => 'reviews#update'
   post '/edamaters/:id/reviews' => 'reviews#create'
+  delete '/edamaters/:id/reviews/:review_id' => 'reviews#destroy'
 
   # Session
   get '/session/new' => 'sessions#new'

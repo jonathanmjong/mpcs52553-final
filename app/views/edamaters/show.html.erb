@@ -3,9 +3,9 @@
 		<div class="col-md-3">
 			<p class="lead">Edamate</p>
 			<div class="list-group">
-				<li class="list-group-item active">Info 1</li>
-				<li class="list-group-item">Info 2</li>
-				<li class="list-group-item">Info 3</li>
+				<li class="list-group-item active">Profile</li>
+				<li class="list-group-item">Reviews</li>
+				<li class="list-group-item">Credentials</li>
 			</div>
 		</div>
 		<div class="col-md-9">
@@ -23,13 +23,29 @@
 					<% end %>
 				</div>
 			</div>
-
 			<div class="well">
-				<div class="text-right">
-					<a class="btn btn-success" href="/edamaters/<%= @edamater.id %>/comments/new">Post a Review!</a>
+				<div class="text-left">
+					<% if !@edamater.reviews.present? %>
+						<p>This EdaMater has not been reviewed yet. Be the first one!</p>
+					<% end %>
+					<a class="btn btn-success" href="/edamaters/<%= @edamater.id %>/reviews/new">Post a Review!</a>
 				</div>
 				<hr>
-				
+				<% @edamater.reviews.each do |review| %>
+					<div class="row">
+						<div class="col-md-12">
+							<strong><%= review.user.username %></strong>
+							<span class="pull-right"><%= review.updated_at %></span>
+							<p>
+								<%= review.text %>
+							</p>
+							<% if Review.where(:user_id => @current_user.id).present? %>
+								<%= button_to "Edit Review", "/edamaters/#{@edamater.id}/reviews/#{review.id}/edit"%>
+								<%= button_to "Delete Review", "/edamaters/#{@edamater.id}/reviews/#{review.id}", method: 'delete', data: { confirm: "Are you sure you want to delete your review?" } %>
+							<% end %>
+						</div>
+					</div>				  
+				<% end %> 
 			</div>
 		</div>
 	</div>

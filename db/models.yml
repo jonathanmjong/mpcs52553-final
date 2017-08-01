@@ -60,6 +60,9 @@ User:
 Review: 
   text: string
   rating: integer
+  author: string
+  user_id: integer 
   edamater_id: integer
   updated_at: datetime
+
 

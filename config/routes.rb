@@ -14,7 +14,12 @@ Rails.application.routes.draw do
   # <form class="delete-form" action="/edamaters/<%= @edamater.id %>/delete" method="post">
   #   <button class="btn btn-danger">Delete EdaMater Profile</button>
   # </form>
-  
+
+  # Reviews
+  get '/edamaters/:id/reviews/new' => 'reviews#new'
+  patch '/edamaters/:id/reviews/:review_id/edit' => 'reviews#update'
+  post '/edamaters/:id/reviews' => 'reviews#create'
+
   # Session
   get '/session/new' => 'sessions#new'
   post '/session' => 'sessions#create'

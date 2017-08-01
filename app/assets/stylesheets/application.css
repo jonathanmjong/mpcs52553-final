@@ -14,8 +14,9 @@
  *= require_self
  */
 
-
-.container{
+/* https://developers.google.com/fonts/docs/getting_started#specifying_font_families_and_styles_in_a_stylesheet_url */
+/* https://fonts.google.com/specimen/Lato  */
+body {
     font-family: Lato;
     font-style: Light;
 }

@@ -35,7 +35,10 @@ class ReviewsController < ApplicationController
     def update
         review = Review.find_by(id: params[:review_id])
         review.text = params["text"]
-        review.rating = params["rating"]
+        review.rating_logistics = params["rating_logistics"]
+        review.rating_clarity = params["rating_clarity"]
+        review.rating_structure = params["rating_structure"]
+        review.rating_value = params["rating_value"]
         # review.user = @current_user
         edamater = Edamater.find_by(id: params[:id])
         # review.edamater = edamater

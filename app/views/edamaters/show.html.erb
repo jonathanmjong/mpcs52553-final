@@ -12,12 +12,18 @@
 			<div class="thumbnail">
 				<img class="img-responsive" src="<%= @edamater.image %>">
 				<div class="caption-full">
-					<h4 class="pull-right">$<%= @edamater.price %>/session</h4>
-					<h4><a href="/edamaters"><%= @edamater.name %></a></h4>
-					<h4>Average Logistics Rating: <%= @average_rating_logistics %></a></h4>
-					<h4>Average Clarity Rating: <%= @average_rating_clarity %></a></h4>
-					<h4>Average Structure Rating: <%= @average_rating_structure %></a></h4>
-					<h4>Average Value Rating: <%= @average_rating_value %></a></h4>
+					<h3 class="pull-right">$<%= @edamater.price %>/session</h3>
+					<h1><%= @edamater.name %></h1>
+					<h4><a href="/edamaters">Back to Profiles</a></h4>
+					<hr>
+					<% if @average_rating_logistics != "No reviews"%>
+						<h4>Average Logistics Rating: <%= @average_rating_logistics %></h4>
+						<h4>Average Clarity Rating: <%= @average_rating_clarity %></h4>
+						<h4>Average Structure Rating: <%= @average_rating_structure %></h4>
+						<h4>Average Value Rating: <%= @average_rating_value %></h4>
+					<% else %>
+						<h4>No ratings yet... be the first to <a href="/edamaters/<%= @edamater.id %>/reviews/new">rate this EdaMater!</a></h4>
+					<% end %>
 					<p><%= @edamater.description %></p>
 					<!-- only show Edit and Delete buttons if user is logged in  -->
 					<!-- @current_user is from session as global var  -->

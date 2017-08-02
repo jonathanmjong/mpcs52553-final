@@ -80,7 +80,7 @@ class EdamatersController < ApplicationController
     end
     # no reviews have been written
     if rating_count == 0
-      return "No review written yet..." 
+      return "No reviews" 
     else
       return (rating_total / rating_count)
     end

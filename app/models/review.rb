@@ -4,6 +4,10 @@ class Review < ApplicationRecord
     belongs_to :edamater
     belongs_to :user
 
-    validates :rating, presence: true
+    validates :rating_logistics, presence: true
+    validates :rating_clarity, presence: true
+    validates :rating_structure, presence: true
+    validates :rating_value, presence: true
     validates :text, presence: true
+
 end

@@ -1,11 +1,23 @@
 <div class="container">
     <div class="row">
-        <h1>Write a new review for <%= @edamater.name %></h1>
+        <h1>Write a new review for <a href="/edamaters/<%= @edamater.id %>"><%= @edamater.name %></a></h1>
         <%= form_tag("/edamaters/#{@edamater.id}/reviews", method: 'post', class: 'edamater-form') do  %>
             <div class="form-group">
             <p>
-                <%= label_tag :rating, "How many stars out of 5?"%>
-                <%= select_tag :rating, options_for_select([1,2,3,4,5]), prompt: "Stars", class: '' %>
+                <%= label_tag :rating_logistics, "Did the EdaMater show up on time? Was s/he prepared?"%>
+                <%= select_tag :rating_logistics, options_for_select([1,2,3,4,5]), prompt: "Stars", class: '' %>
+            </p>
+            <p>
+                <%= label_tag :rating_clarity, "How clear and concise was the content?"%>
+                <%= select_tag :rating_clarity, options_for_select([1,2,3,4,5]), prompt: "Stars", class: '' %>
+            </p>
+            <p>
+                <%= label_tag :rating_structure, "How appropriate was the lession and course structure?"%>
+                <%= select_tag :rating_structure, options_for_select([1,2,3,4,5]), prompt: "Stars", class: '' %>
+            </p>
+            <p>
+                <%= label_tag :rating_value, "Was the session worth the price?"%>
+                <%= select_tag :rating_value, options_for_select([1,2,3,4,5]), prompt: "Stars", class: '' %>
             </p>
             <p>
                 <%= label_tag :text, "Review "  %>

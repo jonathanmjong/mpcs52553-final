@@ -59,7 +59,10 @@ User:
 
 Review: 
   text: string
-  rating: integer
+  rating_logistics: integer
+  rating_clarity: integer
+  rating_structure: integer
+  rating_value: integer
   author: string
   user_id: integer 
   edamater_id: integer

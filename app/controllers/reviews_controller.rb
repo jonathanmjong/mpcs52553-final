@@ -13,12 +13,18 @@ class ReviewsController < ApplicationController
     def create
         review = Review.new
         review.text = params["text"]
-        review.rating = params["rating"]
+        review.rating_logistics = params["rating_logistics"]
+        review.rating_clarity = params["rating_clarity"]
+        review.rating_structure = params["rating_structure"]
+        review.rating_value = params["rating_value"]
         review.user = @current_user
         edamater = Edamater.find_by(id: params[:id])
         review.edamater = edamater
-        review.save
-        redirect_to "/edamaters/#{edamater.id}", notice: "Review posted!"
+        if review.save
+            redirect_to "/edamaters/#{edamater.id}", notice: "Review posted!"
+        else
+            redirect_to "/edamaters/#{edamater.id}/reviews/new", alert: "Please fill out all required fields"
+        end
     end
 
     def edit

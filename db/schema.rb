@@ -24,11 +24,14 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "text"
-    t.integer "rating"
     t.datetime "updated_at"
     t.string "author"
     t.integer "user_id"
     t.integer "edamater_id"
+    t.integer "rating_logistics"
+    t.integer "rating_clarity"
+    t.integer "rating_structure"
+    t.integer "rating_value"
     t.index ["edamater_id"], name: "index_reviews_on_edamater_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end

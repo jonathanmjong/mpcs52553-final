@@ -13,7 +13,11 @@
 				<img class="img-responsive" src="<%= @edamater.image %>">
 				<div class="caption-full">
 					<h4 class="pull-right">$<%= @edamater.price %>/session</h4>
-					<h4><a><%= @edamater.name %></a></h4>
+					<h4><a href="/edamaters"><%= @edamater.name %></a></h4>
+					<h4>Average Logistics Rating: <%= @average_rating_logistics %></a></h4>
+					<h4>Average Clarity Rating: <%= @average_rating_clarity %></a></h4>
+					<h4>Average Structure Rating: <%= @average_rating_structure %></a></h4>
+					<h4>Average Value Rating: <%= @average_rating_value %></a></h4>
 					<p><%= @edamater.description %></p>
 					<!-- only show Edit and Delete buttons if user is logged in  -->
 					<!-- @current_user is from session as global var  -->

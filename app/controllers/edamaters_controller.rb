@@ -46,12 +46,44 @@ class EdamatersController < ApplicationController
   
   def show
     @edamater = Edamater.find_by(id: params["id"])
+    @average_rating_logistics = average_ratings(@edamater.reviews, "logistics")
+    @average_rating_clarity = average_ratings(@edamater.reviews, "clarity")
+    @average_rating_structure = average_ratings(@edamater.reviews, "structure")
+    @average_rating_value = average_ratings(@edamater.reviews, "value")
   end
 
   def destroy
     edamater = Edamater.find_by(id: params["id"])
     edamater.delete
     redirect_to "/edamaters",  notice: 'EdaMate profile deleted'
+  end
+
+# Helper functions
+  def average_ratings(reviews, review_type)
+    rating_total = 0
+    rating_count = 0
+    # check all reviews
+    for review in reviews
+      # there are 4 review categories, check for which review type then divide by total number of rating_count
+      rating_count = rating_count + 1
+      if review_type == "logistics"
+        rating_total = rating_total + review.rating_logistics
+      elsif review_type == "clarity"
+        rating_total = rating_total + review.rating_clarity
+      elsif review_type == "structure"
+        rating_total = rating_total + review.rating_structure
+      elsif review_type == "value"
+        rating_total = rating_total + review.rating_value
+      end
+      puts rating_total
+      puts rating_count
+    end
+    # no reviews have been written
+    if rating_count == 0
+      return "No review written yet..." 
+    else
+      return (rating_total / rating_count)
+    end
   end
 
 end

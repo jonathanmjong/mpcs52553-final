@@ -27,8 +27,8 @@
 					<p><%= @edamater.description %></p>
 					<!-- only show Edit and Delete buttons if user is logged in  -->
 					<!-- @current_user is from session as global var  -->
-					<% if @current_user != "Guest" %>
-						<%= button_to "Edit EdaMate Profile", "/edamaters/#{@edamater.id}/edit", method: 'get' %>
+					<% if @current_user != "Guest" && Edamater.where(:user_id => @current_user.id).present? %>
+						<%= button_to "Edit EdaMate Profile", "/edamaters/#{@edamater.id}/edit", method: 'get'%>
 						<%= button_to "Delete EdaMate Profile", "/edamaters/#{@edamater.id}", method: 'delete', data: { confirm: "Are you sure you want to delete your profile?" } %>
 					<% end %>
 				</div>
@@ -49,7 +49,7 @@
 							<p>
 								<%= review.text %>
 							</p>
-							<% if @current_user != "Guest" %>
+							<% if @current_user != "Guest" && Review.where(:user_id => @current_user.id).present? %>
 								<%= button_to "Edit Review", "/edamaters/#{@edamater.id}/reviews/#{review.id}/edit", method: 'get' %>
 								<%= button_to "Delete Review", "/edamaters/#{@edamater.id}/reviews/#{review.id}", method: 'delete', data: { confirm: "Are you sure you want to delete your review?" } %>
 							<% end %>

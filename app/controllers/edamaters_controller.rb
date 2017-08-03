@@ -3,7 +3,11 @@ class EdamatersController < ApplicationController
   before_action :check_session
 
   def check_session
-    @current_user = User.find_by(id: session[:user_id])
+      if User.find_by(id: session[:user_id]).present?
+          @current_user = User.find_by(id: session[:user_id])
+      else
+          @current_user = "Guest"
+      end
   end
 
   def index
@@ -75,8 +79,6 @@ class EdamatersController < ApplicationController
       elsif review_type == "value"
         rating_total = rating_total + review.rating_value
       end
-      puts rating_total
-      puts rating_count
     end
     # no reviews have been written
     if rating_count == 0

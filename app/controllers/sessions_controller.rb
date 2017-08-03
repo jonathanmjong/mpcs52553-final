@@ -3,7 +3,11 @@ class SessionsController < ApplicationController
     before_action :check_session
 
     def check_session
-        @current_user = User.find_by(id: session[:user_id])
+        if User.find_by(id: session[:user_id]).present?
+            @current_user = User.find_by(id: session[:user_id])
+        else
+            @current_user = "Guest"
+        end
     end
 
     # got code and modified from professor week6 sessions_controller

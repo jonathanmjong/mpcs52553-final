@@ -19,11 +19,11 @@
 				</div>
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<% if !@current_user.present? %>
+						<% if @current_user == "Guest" %>
 							<li><a href="/session/new">Login</a></li>
 							<li><a href="/user">Sign Up</a></li>	
 						<% end  %>
-						<% if @current_user.present? %>
+						<% if @current_user != "Guest" %>
 							<li><a href="#">Logged in as <%= @current_user.username %></a></li> 
           					<li><%= button_to "Sign Out", '/logout', :method => :delete, :data => {:confirm => "Sign Out of EdaMate?"} %></li>
 						<% end %>

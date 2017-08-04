@@ -47,7 +47,7 @@ class ReviewsController < ApplicationController
         edamater = Edamater.find_by(id: params[:id])
         # review.edamater = edamater
         if review.save
-            redirect_to "/edamaters/#{edamater.id}", notice: "Review posted!"        
+            redirect_to "/edamaters/#{edamater.id}", notice: "Review Updated!"        
         else
             redirect_to "/edamaters/#{edamater.id}/reviews/#{review.id}/edit", alert: "Please fill out all review inputs"
         end 

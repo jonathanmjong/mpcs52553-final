@@ -1,5 +1,15 @@
 class UsersController < ApplicationController
 
+  before_action :check_session
+
+  def check_session
+      if User.find_by(id: session[:user_id]).present?
+          @current_user = User.find_by(id: session[:user_id])
+      else
+          @current_user = "Guest"
+      end
+  end
+      
   def new
   end
 
@@ -13,7 +23,7 @@ class UsersController < ApplicationController
     user.email = params['email']
     user.password = params['password']
     user.save
-    redirect_to '/edamaters', notice: "Thanks for signing up!"
+    redirect_to '/session/new', notice: "Thanks for signing up! Please login to post reviews."
   end
 
   def index

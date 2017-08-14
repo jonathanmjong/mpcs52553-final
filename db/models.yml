@@ -49,6 +49,16 @@ Edamater:
   image: string
   description: text
   user_id: integer
+  availability_id: integer
+  updated_at: datetime
+
+Student:
+  name: string
+  price: integer
+  image: string
+  description: text
+  user_id: integer
+  availability_id: integer
   updated_at: datetime
 
 User:
@@ -68,4 +78,54 @@ Review:
   edamater_id: integer
   updated_at: datetime
 
+StudentAvailability:
+  12am: boolean
+  1am: boolean
+  2am: boolean
+  3am: boolean
+  4am: boolean
+  5am: boolean
+  6am: boolean
+  7am: boolean
+  8am: boolean
+  9am: boolean
+  10am: boolean
+  11am: boolean
+  12pm: boolean
+  1pm: boolean
+  2pm: boolean
+  3pm: boolean
+  4pm: boolean
+  5pm: boolean
+  6pm: boolean
+  7pm: boolean
+  8pm: boolean
+  9pm: boolean
+  10pm: boolean
+  11pm: boolean
 
+EdamaterAvailability:
+  12am: boolean
+  1am: boolean
+  2am: boolean
+  3am: boolean
+  4am: boolean
+  5am: boolean
+  6am: boolean
+  7am: boolean
+  8am: boolean
+  9am: boolean
+  10am: boolean
+  11am: boolean
+  12pm: boolean
+  1pm: boolean
+  2pm: boolean
+  3pm: boolean
+  4pm: boolean
+  5pm: boolean
+  6pm: boolean
+  7pm: boolean
+  8pm: boolean
+  9pm: boolean
+  10pm: boolean
+  11pm: boolean

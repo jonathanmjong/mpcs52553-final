@@ -28,11 +28,16 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   # <li><a rel="nofollow" data-method="delete" href="/logout">Sign Out</a></li>
 
-
   # User - register and show
   get '/user' => 'users#new'
   post '/user' => 'users#create'
   get '/user/:id' => 'users#show'
+
+  # Student profiling
+  get '/students' => 'students#index'
+  get '/students/new' => 'students#new'
+  post '/students' => 'students#create'
+
 
   # resources :edamaters
 

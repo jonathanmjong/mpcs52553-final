@@ -1,0 +1,636 @@
+<div class="container">
+	<div class="row">
+		<h1>Create a new Student profile</h1>
+		<%= form_tag("/students", method: 'post') do  %>
+		<div style="width: 30%; margin: 25px auto;">
+			<div class="form-group">
+			<%= label_tag :name, "Student Profile Name" %>
+			<%= text_field_tag :name, "", autofocus: true, class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+			<%= label_tag :image, "Link to Student Profile Image" %>
+			<%= text_field_tag :image, "", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+			<%= label_tag :price, "Set the max price you're willing to dish out" %>
+			<%= text_field_tag :price, "", class: 'form-control' %>
+			</div>
+
+			<div class="form-group">
+			<%= label_tag :description, "Give a quick bio about what you want to learn and passions!" %>
+			<%= text_area_tag :description, "", rows: 5, class: 'form-control' %>
+			</div>
+		</div>
+
+        <div>
+            <h4>
+                Time Availability (all times based in Eastern Standard Time)
+            </h4>
+
+            <hr> 
+            <div class="row col-md-12">
+                <div class="form-group col-md-2">
+                    <h4>Monday</h4>
+                    <div class="row">
+                    <%= check_box_tag(:monday_12am) %>
+                    <%= label_tag(:monday_12am, "12am-1am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_1am) %>
+                    <%= label_tag(:monday_1am, "1am-2am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_2am) %>
+                    <%= label_tag(:monday_2am, "2am-3am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_3am) %>
+                    <%= label_tag(:monday_3am, "3am-4am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_4am) %>
+                    <%= label_tag(:monday_4am, "4am-5am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_5am) %>
+                    <%= label_tag(:monday_5am, "5am-6am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_6am) %>
+                    <%= label_tag(:monday_6am, "6am-7am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_7am) %>
+                    <%= label_tag(:monday_7am, "7am-8am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_8am) %>
+                    <%= label_tag(:monday_8am, "8am-9am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_9am) %>
+                    <%= label_tag(:monday_9am, "9am-10am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_10am) %>
+                    <%= label_tag(:monday_10am, "10am-11am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_11am) %>
+                    <%= label_tag(:monday_11am, "11am-12pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_12pm) %>
+                    <%= label_tag(:monday_12pm, "12pm-1pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_1pm) %>
+                    <%= label_tag(:monday_1pm, "1pm-2pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_2pm) %>
+                    <%= label_tag(:monday_2pm, "2pm-3pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_3pm) %>
+                    <%= label_tag(:monday_3pm, "3pm-4pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_4pm) %>
+                    <%= label_tag(:monday_4pm, "4pm-5pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_5pm) %>
+                    <%= label_tag(:monday_5pm, "5pm-6pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_6pm) %>
+                    <%= label_tag(:monday_6pm, "6pm-7pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_7pm) %>
+                    <%= label_tag(:monday_7pm, "7pm-8pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_8pm) %>
+                    <%= label_tag(:monday_8pm, "8pm-9pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_9pm) %>
+                    <%= label_tag(:monday_9pm, "9pm-10pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_10pm) %>
+                    <%= label_tag(:monday_10pm, "10pm-11pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:monday_11pm) %>
+                    <%= label_tag(:monday_11pm, "11pm-12am") %>
+                    </div>
+                </div>  
+                <div class="form-group col-md-2">
+                    <h4>Tuesday</h4>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_12am) %>
+                    <%= label_tag(:tuesday_12am, "12am-1am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_1am) %>
+                    <%= label_tag(:tuesday_1am, "1am-2am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_2am) %>
+                    <%= label_tag(:tuesday_2am, "2am-3am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_3am) %>
+                    <%= label_tag(:tuesday_3am, "3am-4am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_4am) %>
+                    <%= label_tag(:tuesday_4am, "4am-5am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_5am) %>
+                    <%= label_tag(:tuesday_5am, "5am-6am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_6am) %>
+                    <%= label_tag(:tuesday_6am, "6am-7am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_7am) %>
+                    <%= label_tag(:tuesday_7am, "7am-8am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_8am) %>
+                    <%= label_tag(:tuesday_8am, "8am-9am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_9am) %>
+                    <%= label_tag(:tuesday_9am, "9am-10am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_10am) %>
+                    <%= label_tag(:tuesday_10am, "10am-11am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_11am) %>
+                    <%= label_tag(:tuesday_11am, "11am-12pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_12pm) %>
+                    <%= label_tag(:tuesday_12pm, "12pm-1pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_1pm) %>
+                    <%= label_tag(:tuesday_1pm, "1pm-2pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_2pm) %>
+                    <%= label_tag(:tuesday_2pm, "2pm-3pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_3pm) %>
+                    <%= label_tag(:tuesday_3pm, "3pm-4pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_4pm) %>
+                    <%= label_tag(:tuesday_4pm, "4pm-5pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_5pm) %>
+                    <%= label_tag(:tuesday_5pm, "5pm-6pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_6pm) %>
+                    <%= label_tag(:tuesday_6pm, "6pm-7pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_7pm) %>
+                    <%= label_tag(:tuesday_7pm, "7pm-8pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_8pm) %>
+                    <%= label_tag(:tuesday_8pm, "8pm-9pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_9pm) %>
+                    <%= label_tag(:tuesday_9pm, "9pm-10pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_10pm) %>
+                    <%= label_tag(:tuesday_10pm, "10pm-11pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:tuesday_11pm) %>
+                    <%= label_tag(:tuesday_11pm, "11pm-12am") %>
+                    </div>
+                </div>  
+                <div class="form-group col-md-2">
+                    <h4>Wednesday</h4>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_12am) %>
+                    <%= label_tag(:wednesday_12am, "12am-1am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_1am) %>
+                    <%= label_tag(:wednesday_1am, "1am-2am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_2am) %>
+                    <%= label_tag(:wednesday_2am, "2am-3am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_3am) %>
+                    <%= label_tag(:wednesday_3am, "3am-4am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_4am) %>
+                    <%= label_tag(:wednesday_4am, "4am-5am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_5am) %>
+                    <%= label_tag(:wednesday_5am, "5am-6am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_6am) %>
+                    <%= label_tag(:wednesday_6am, "6am-7am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_7am) %>
+                    <%= label_tag(:wednesday_7am, "7am-8am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_8am) %>
+                    <%= label_tag(:wednesday_8am, "8am-9am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_9am) %>
+                    <%= label_tag(:wednesday_9am, "9am-10am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_10am) %>
+                    <%= label_tag(:wednesday_10am, "10am-11am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_11am) %>
+                    <%= label_tag(:wednesday_11am, "11am-12pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_12pm) %>
+                    <%= label_tag(:wednesday_12pm, "12pm-1pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_1pm) %>
+                    <%= label_tag(:wednesday_1pm, "1pm-2pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_2pm) %>
+                    <%= label_tag(:wednesday_2pm, "2pm-3pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_3pm) %>
+                    <%= label_tag(:wednesday_3pm, "3pm-4pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_4pm) %>
+                    <%= label_tag(:wednesday_4pm, "4pm-5pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_5pm) %>
+                    <%= label_tag(:wednesday_5pm, "5pm-6pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_6pm) %>
+                    <%= label_tag(:wednesday_6pm, "6pm-7pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_7pm) %>
+                    <%= label_tag(:wednesday_7pm, "7pm-8pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_8pm) %>
+                    <%= label_tag(:wednesday_8pm, "8pm-9pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_9pm) %>
+                    <%= label_tag(:wednesday_9pm, "9pm-10pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_10pm) %>
+                    <%= label_tag(:wednesday_10pm, "10pm-11pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:wednesday_11pm) %>
+                    <%= label_tag(:wednesday_11pm, "11pm-12am") %>
+                    </div>
+                </div>  
+                <div class="form-group col-md-2">
+                    <h4>Thursday</h4>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_12am) %>
+                    <%= label_tag(:thursday_12am, "12am-1am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_1am) %>
+                    <%= label_tag(:thursday_1am, "1am-2am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_2am) %>
+                    <%= label_tag(:thursday_2am, "2am-3am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_3am) %>
+                    <%= label_tag(:thursday_3am, "3am-4am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_4am) %>
+                    <%= label_tag(:thursday_4am, "4am-5am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_5am) %>
+                    <%= label_tag(:thursday_5am, "5am-6am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_6am) %>
+                    <%= label_tag(:thursday_6am, "6am-7am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_7am) %>
+                    <%= label_tag(:thursday_7am, "7am-8am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_8am) %>
+                    <%= label_tag(:thursday_8am, "8am-9am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_9am) %>
+                    <%= label_tag(:thursday_9am, "9am-10am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_10am) %>
+                    <%= label_tag(:thursday_10am, "10am-11am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_11am) %>
+                    <%= label_tag(:thursday_11am, "11am-12pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_12pm) %>
+                    <%= label_tag(:thursday_12pm, "12pm-1pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_1pm) %>
+                    <%= label_tag(:thursday_1pm, "1pm-2pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_2pm) %>
+                    <%= label_tag(:thursday_2pm, "2pm-3pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_3pm) %>
+                    <%= label_tag(:thursday_3pm, "3pm-4pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_4pm) %>
+                    <%= label_tag(:thursday_4pm, "4pm-5pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_5pm) %>
+                    <%= label_tag(:thursday_5pm, "5pm-6pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_6pm) %>
+                    <%= label_tag(:thursday_6pm, "6pm-7pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_7pm) %>
+                    <%= label_tag(:thursday_7pm, "7pm-8pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_8pm) %>
+                    <%= label_tag(:thursday_8pm, "8pm-9pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_9pm) %>
+                    <%= label_tag(:thursday_9pm, "9pm-10pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_10pm) %>
+                    <%= label_tag(:thursday_10pm, "10pm-11pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:thursday_11pm) %>
+                    <%= label_tag(:thursday_11pm, "11pm-12am") %>
+                    </div>
+                </div>  
+                <div class="form-group col-md-2">
+                    <h4>Friday</h4>
+                    <div class="row">
+                    <%= check_box_tag(:friday_12am) %>
+                    <%= label_tag(:friday_12am, "12am-1am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_1am) %>
+                    <%= label_tag(:friday_1am, "1am-2am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_2am) %>
+                    <%= label_tag(:friday_2am, "2am-3am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_3am) %>
+                    <%= label_tag(:friday_3am, "3am-4am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_4am) %>
+                    <%= label_tag(:friday_4am, "4am-5am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_5am) %>
+                    <%= label_tag(:friday_5am, "5am-6am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_6am) %>
+                    <%= label_tag(:friday_6am, "6am-7am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_7am) %>
+                    <%= label_tag(:friday_7am, "7am-8am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_8am) %>
+                    <%= label_tag(:friday_8am, "8am-9am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_9am) %>
+                    <%= label_tag(:friday_9am, "9am-10am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_10am) %>
+                    <%= label_tag(:friday_10am, "10am-11am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_11am) %>
+                    <%= label_tag(:friday_11am, "11am-12pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_12pm) %>
+                    <%= label_tag(:friday_12pm, "12pm-1pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_1pm) %>
+                    <%= label_tag(:friday_1pm, "1pm-2pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_2pm) %>
+                    <%= label_tag(:friday_2pm, "2pm-3pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_3pm) %>
+                    <%= label_tag(:friday_3pm, "3pm-4pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_4pm) %>
+                    <%= label_tag(:friday_4pm, "4pm-5pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_5pm) %>
+                    <%= label_tag(:friday_5pm, "5pm-6pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_6pm) %>
+                    <%= label_tag(:friday_6pm, "6pm-7pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_7pm) %>
+                    <%= label_tag(:friday_7pm, "7pm-8pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_8pm) %>
+                    <%= label_tag(:friday_8pm, "8pm-9pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_9pm) %>
+                    <%= label_tag(:friday_9pm, "9pm-10pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_10pm) %>
+                    <%= label_tag(:friday_10pm, "10pm-11pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:friday_11pm) %>
+                    <%= label_tag(:friday_11pm, "11pm-12am") %>
+                    </div>
+                </div>  
+                <div class="form-group col-md-2">
+                    <h4>Weekend</h4>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_12am) %>
+                    <%= label_tag(:weekend_12am, "12am-1am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_1am) %>
+                    <%= label_tag(:weekend_1am, "1am-2am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_2am) %>
+                    <%= label_tag(:weekend_2am, "2am-3am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_3am) %>
+                    <%= label_tag(:weekend_3am, "3am-4am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_4am) %>
+                    <%= label_tag(:weekend_4am, "4am-5am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_5am) %>
+                    <%= label_tag(:weekend_5am, "5am-6am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_6am) %>
+                    <%= label_tag(:weekend_6am, "6am-7am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_7am) %>
+                    <%= label_tag(:weekend_7am, "7am-8am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_8am) %>
+                    <%= label_tag(:weekend_8am, "8am-9am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_9am) %>
+                    <%= label_tag(:weekend_9am, "9am-10am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_10am) %>
+                    <%= label_tag(:weekend_10am, "10am-11am") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_11am) %>
+                    <%= label_tag(:weekend_11am, "11am-12pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_12pm) %>
+                    <%= label_tag(:weekend_12pm, "12pm-1pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_1pm) %>
+                    <%= label_tag(:weekend_1pm, "1pm-2pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_2pm) %>
+                    <%= label_tag(:weekend_2pm, "2pm-3pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_3pm) %>
+                    <%= label_tag(:weekend_3pm, "3pm-4pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_4pm) %>
+                    <%= label_tag(:weekend_4pm, "4pm-5pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_5pm) %>
+                    <%= label_tag(:weekend_5pm, "5pm-6pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_6pm) %>
+                    <%= label_tag(:weekend_6pm, "6pm-7pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_7pm) %>
+                    <%= label_tag(:weekend_7pm, "7pm-8pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_8pm) %>
+                    <%= label_tag(:weekend_8pm, "8pm-9pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_9pm) %>
+                    <%= label_tag(:weekend_9pm, "9pm-10pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_10pm) %>
+                    <%= label_tag(:weekend_10pm, "10pm-11pm") %>
+                    </div>
+                    <div class="row">
+                    <%= check_box_tag(:weekend_11pm) %>
+                    <%= label_tag(:weekend_11pm, "11pm-12am") %>
+                    </div>
+                </div>   
+            </div>        
+
+			<%= submit_tag "Create Student Profile", class: 'btn btn-success btn-lg'%>
+			or
+			<%= link_to "Cancel", "/students" %>
+        </div>
+		<% end %>
+	</div>
+</div>

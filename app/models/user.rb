@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :reviews
+    has_many :reviews, dependent: :destroy
 
     # used week6 user.rb code for password validation
     validates :username, presence: true

@@ -12,6 +12,33 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
+  create_table "edamater_availabilities", force: :cascade do |t|
+    t.boolean "12am", default: false
+    t.boolean "1am", default: false
+    t.boolean "2am", default: false
+    t.boolean "3am", default: false
+    t.boolean "4am", default: false
+    t.boolean "5am", default: false
+    t.boolean "6am", default: false
+    t.boolean "7am", default: false
+    t.boolean "8am", default: false
+    t.boolean "9am", default: false
+    t.boolean "10am", default: false
+    t.boolean "11am", default: false
+    t.boolean "12pm", default: false
+    t.boolean "1pm", default: false
+    t.boolean "2pm", default: false
+    t.boolean "3pm", default: false
+    t.boolean "4pm", default: false
+    t.boolean "5pm", default: false
+    t.boolean "6pm", default: false
+    t.boolean "7pm", default: false
+    t.boolean "8pm", default: false
+    t.boolean "9pm", default: false
+    t.boolean "10pm", default: false
+    t.boolean "11pm", default: false
+  end
+
   create_table "edamaters", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -19,6 +46,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at"
     t.text "description"
     t.integer "user_id"
+    t.integer "availability_id"
+    t.index ["availability_id"], name: "index_edamaters_on_availability_id"
     t.index ["user_id"], name: "index_edamaters_on_user_id"
   end
 
@@ -34,6 +63,45 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "rating_value"
     t.index ["edamater_id"], name: "index_reviews_on_edamater_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "student_availabilities", force: :cascade do |t|
+    t.boolean "12am", default: false
+    t.boolean "1am", default: false
+    t.boolean "2am", default: false
+    t.boolean "3am", default: false
+    t.boolean "4am", default: false
+    t.boolean "5am", default: false
+    t.boolean "6am", default: false
+    t.boolean "7am", default: false
+    t.boolean "8am", default: false
+    t.boolean "9am", default: false
+    t.boolean "10am", default: false
+    t.boolean "11am", default: false
+    t.boolean "12pm", default: false
+    t.boolean "1pm", default: false
+    t.boolean "2pm", default: false
+    t.boolean "3pm", default: false
+    t.boolean "4pm", default: false
+    t.boolean "5pm", default: false
+    t.boolean "6pm", default: false
+    t.boolean "7pm", default: false
+    t.boolean "8pm", default: false
+    t.boolean "9pm", default: false
+    t.boolean "10pm", default: false
+    t.boolean "11pm", default: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.string "image"
+    t.text "description"
+    t.integer "user_id"
+    t.integer "availability_id"
+    t.datetime "updated_at"
+    t.index ["availability_id"], name: "index_students_on_availability_id"
+    t.index ["user_id"], name: "index_students_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

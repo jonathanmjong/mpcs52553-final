@@ -41,6 +41,13 @@ body {
     flex-wrap: wrap;
 }
 
+ @media (max-width: 750px) {
+     .edamaters-index-profile-div {
+         width: 100%;
+     }
+ }  
+
+
 .edamater-form {
     width: 30%; 
     margin: 25px auto;

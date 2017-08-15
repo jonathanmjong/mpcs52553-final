@@ -21,6 +21,11 @@ class StudentsController < ApplicationController
         puts 'student profile created path'
         puts params['monday_12am']
         puts params['monday_1am']
+        if student.save
+            redirect_to '/students', notice: "Student profile created! Sit back and relax...we will notify you when a match occurs."
+        else
+            redirect_to '/students/new', alert: "Please check all inputs."
+        end
         redirect_to '/students', notice: "Student profile created! Sit back and relax...we will notify you when a match occurs."
     end
 

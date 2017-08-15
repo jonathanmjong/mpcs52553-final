@@ -10,24 +10,35 @@ class EdamatersController < ApplicationController
       end
   end
 
+  def landing
+  end 
+
   def index
     @edamaters = Edamater.all
   end
 
   def new
-    @edamater = Edamater.new
+    if @current_user == "Guest"
+      redirect_to "/edamaters",  notice: 'Please login first!'
+    end
   end
 
   def create
-    edamater = Edamater.new
-    edamater.name = params["name"]
-    edamater.price = params["price"]
-    edamater.image = params["image"]
-    edamater.description = params["description"]
-    edamater.user = @current_user
-    edamater.save
-    
-    redirect_to "/edamaters", notice: "EdaMate profile created!"
+    if @current_user == "Guest"
+      redirect_to "/edamaters",  notice: 'Please login first!'
+    else
+      edamater = Edamater.new
+      edamater.name = params["name"]
+      edamater.price = params["price"]
+      edamater.image = params["image"]
+      edamater.description = params["description"]
+      edamater.user = @current_user
+      if edamater.save
+        redirect_to "/edamaters", notice: "EdaMate profile created!"
+      else
+        redirect_to "/edamaters/new", alert: "Please check all inputs."
+      end
+    end
   end
 
   def edit

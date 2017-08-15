@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root 'edamaters#index'
+  root 'edamaters#landing'
 
   # Edamaters
   get '/edamaters' => 'edamaters#index'

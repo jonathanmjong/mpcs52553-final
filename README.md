@@ -8,6 +8,8 @@ Features:
 3. Writing reviews for different profiles, restful create/edit/delete functionality 
     - reviews joined/tied to user profile
     - only users who own review can edit/delete/rate
+    - dynamic logic so if no reviews gives different html
+    - controller averages reviews to give overall rating
 4. Frontend edit/delete visibility for only users that own review
 5. Custom messaging validation of user error when creating user profile or writing review
 6. Landing page
@@ -23,3 +25,7 @@ Frontend:
 2. custom google font
 3. bootstrap jumbotron and styling
 4. Using image links for background (better method is probably to store images in cache)
+
+BETA/TBD
+1. student profile
+2. scheduling connecting student and tutor availability (this would be a backend worker node in Azure/AWS matching based on availability and filter criteria such as ratings)

@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
             if u.authenticate(params["password"])
                 # cookies["user_id"] = u.id
                 session["user_id"] = u.id
-                redirect_to "/", notice: "Welcome back, #{u.username}!"
+                redirect_to "/edamaters", notice: "Welcome back, #{u.username}!"
             else
                 redirect_to "/session/new", alert: "Bad password"
             end
@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
         # cookies.delete("user_id")
         # cookies["user_id"] = nil
         reset_session
-        redirect_to root_url, notice: "Goodbye from EdaMate!"
+        redirect_to '/edamaters', notice: "Goodbye from EdaMate!"
     end
 
 end

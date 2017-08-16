@@ -1,6 +1,7 @@
 # README
 
 Features:
+0. Set up Azure PaaS web app at url: http://mpcs52533-final2.azurewebsites.net/ 
 1. Signup and login functionality
     - header shows name of user logged in
     - signing out restricts user to no edit or delete

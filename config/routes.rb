@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   root 'edamaters#landing'
 
+  get '/help' => 'edamaters#help'
   # Edamaters
   get '/edamaters' => 'edamaters#index'
   get '/edamaters/new' => 'edamaters#new'

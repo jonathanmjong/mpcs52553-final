@@ -25,6 +25,7 @@ Frontend:
 2. custom google font
 3. bootstrap jumbotron and styling
 4. Using image links for background (better method is probably to store images in cache)
+5. html of reviews and other show author
 
 BETA/TBD
 1. student profile

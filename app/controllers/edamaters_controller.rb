@@ -13,6 +13,9 @@ class EdamatersController < ApplicationController
   def landing
   end 
 
+  def help 
+  end 
+  
   def index
     @edamaters = Edamater.all
   end
